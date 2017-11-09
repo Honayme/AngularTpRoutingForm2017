@@ -1,0 +1,79 @@
+<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+  <label>
+    <span>Name</span>
+    <input
+      type="text"
+      placeholder="Your full name"
+      formControlName="name">
+  </label>
+  <div
+    class="error"
+    *ngIf="user.get('name').hasError('required') && user.get('name').touched">
+    Name is required
+  </div>
+  <div
+    class="error"
+    *ngIf="user.get('name').hasError('minlength') && user.get('name').touched">
+    Minimum of 2 characters
+  </div>
+
+  <label>
+    <span>Nickname</span>
+    <input
+      type="text"
+      placeholder="Your Nickname"
+      formControlName="nickname">
+  </label>
+  <div
+    class="error"
+    *ngIf="user.get('Nickname').hasError('required') && user.get('Nickname').touched">
+    Nickname is required
+  </div>
+
+
+  <div>
+    <label>
+      <span>Address</span>
+      <input
+        type="text"
+        placeholder="Your address"
+        formControlName="Adresse">
+    </label>
+    <div
+      class="error"
+      *ngIf="user.get('Address').hasError('required') && user.get('Address').touched">
+      Address is required
+    </div>
+
+
+    <label>
+      <span>Email address</span>
+      <input
+        type="email"
+        placeholder="Your email address"
+        formControlName="mail">
+    </label>
+    <div
+      class="error"
+      *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+      Email is required
+    </div>
+
+    <label>
+      <span>Téléphone</span>
+      <input
+        type="text"
+        placeholder="Your phone number"
+        formControlName="Tel">
+    </label>
+    <div
+      class="error"
+      *ngIf="user.get('Tel').hasError('required') && user.get('Tel').touched">
+      Phone number is required
+    </div>
+
+  </div>
+  <button type="submit" [disabled]="user.invalid">Sign up</button>
+
+
+</form>

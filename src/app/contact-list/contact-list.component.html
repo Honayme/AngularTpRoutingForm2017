@@ -1,0 +1,10 @@
+<p *ngFor="let contact of contacts">
+  {{contact.name}}
+  <button type="button" class="btn btn-info">
+    <a routerLink="details/{{contact._id}}" class="nav-link" href="">Info</a>
+  </button>
+</p>
+
+
+
+

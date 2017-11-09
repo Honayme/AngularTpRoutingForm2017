@@ -1,0 +1,14 @@
+<div *ngFor="let detail of details">
+  <div *ngIf="detail">{{detail._id}}</div>
+
+  <ng-template [ngIf]="detail">
+    <ul>
+      <li>{{detail.nickname}}</li>
+      <li>{{detail.Adresse}}</li>
+      <li>{{detail.Tel}}</li>
+      <li>{{detail.mail}}</li>
+    </ul>
+  </ng-template>
+
+</div>
+
